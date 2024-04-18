@@ -48,7 +48,6 @@ class DataCollectorAsphalt:
             # Process and resize the image
             try:
                 cv_image = cv2.resize(self.bridge.imgmsg_to_cv2(img_msg, "bgr8"), (128, 72))  # Resize to 128x72 (16:9)
-                # cv_image = cv_image[int(cv_image.shape[0] * (0.4)):, :]  # Then crop to the bottom 60%
             except CvBridgeError as error:
                 rospy.logerr(error)
                 return
